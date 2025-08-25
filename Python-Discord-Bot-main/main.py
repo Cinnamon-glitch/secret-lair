@@ -25,13 +25,10 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-@bot.command()
-async def hello(ctx):
-    await ctx.send(f"Hello {ctx.author.mention}!")
-
 @secret.error
 async def secret_error(ctx, error):
     if isinstance(error, commands.MissingRole):
         await ctx.send("You do not have permission to do that!")
+
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
