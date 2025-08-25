@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-token = os.getenv(MTQwOTU4MzEyOTI5MDg3MDc4Ng.G_E4mE.fAiZ_1tfqKAXmoVgn1Of7Zcku4hUTIjlUaUzAo)
+token = os.getenv('DISCORD_TOKEN')
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
@@ -32,4 +32,5 @@ async def secret_error(ctx, error):
 
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+
 
